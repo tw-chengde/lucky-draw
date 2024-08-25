@@ -16,10 +16,11 @@ export default defineNuxtConfig({
     head: {
       title: "誠得隨機抽籤系統",
       meta: [
+        { name: "google-adsense-account", content: "ca-pub-8553475308912790" },
         {
           name: "description",
           content:
-            "本工具又稱為抽獎程式、抽籤程式、名單抽獎、尾牙抽獎、Lucky draw、Random name picker",
+            "本工具為抽獎程式、抽籤程式、名單抽獎、尾牙抽獎、Lucky draw、Random name picker",
         },
         {
           name: "og:title",
