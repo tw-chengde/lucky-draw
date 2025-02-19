@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     head: {
       title: "誠得隨機抽籤系統",
       meta: [
-        { name: "google-adsense-account", content: "ca-pub-8553475308912790" },
         {
           name: "description",
           content:
