@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
-    "nuxt": "^3.11.2",
+    "nuxt": "3.11.2",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue-router": "4.3.2",
+    "@nuxtjs/google-adsense": "github:Johnwang860424/google-adsense#main"
   },
   "devDependencies": {
     "@bootstrap-vue-next/nuxt": "^0.18.1",

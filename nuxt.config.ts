@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@bootstrap-vue-next/nuxt"],
+  modules: ["@bootstrap-vue-next/nuxt", "@nuxtjs/google-adsense"],
+  googleAdsense: {
+    id: "ca-pub-3150973761963926",
+  },
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
     "bootstrap-icons/font/bootstrap-icons.css",
