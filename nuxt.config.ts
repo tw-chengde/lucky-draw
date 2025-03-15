@@ -1,17 +1,20 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@bootstrap-vue-next/nuxt"],
+  modules: ["@bootstrap-vue-next/nuxt", "@nuxt/scripts"],
+
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
     "bootstrap-icons/font/bootstrap-icons.css",
     "assets/main.sass",
   ],
+
   components: [
     {
       path: "~/components",
       pathPrefix: false,
     },
   ],
+
   app: {
     head: {
       title: "誠得隨機抽籤系統",
@@ -38,4 +41,15 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/jpg", href: "/favicon.jpg" }],
     },
   },
+
+  scripts: {
+    registry: {
+      googleAdsense: {
+        client: "ca-pub-3150973761963926", // Your Google AdSense Publisher ID
+        autoAds: true, // Enable Auto Ads
+      },
+    },
+  },
+
+  compatibilityDate: "2025-03-15",
 });
