@@ -1,9 +1,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@bootstrap-vue-next/nuxt", "@nuxt/scripts"],
+  modules: ["@nuxt/scripts"],
 
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
+    "bootstrap-vue-next/dist/bootstrap-vue-next.css",
     "bootstrap-icons/font/bootstrap-icons.css",
     "assets/main.sass",
   ],

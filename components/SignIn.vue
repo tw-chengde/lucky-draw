@@ -44,6 +44,15 @@
 </template>
 
 <script lang="ts" setup>
+import {
+  BAlert,
+  BButton,
+  BForm,
+  BFormGroup,
+  BFormInput,
+  BLink,
+} from "bootstrap-vue-next";
+
 const form = reactive({
   email: "",
   password: "",

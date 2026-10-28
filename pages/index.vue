@@ -109,7 +109,23 @@
 </template>
 
 <script lang="ts" setup>
-import { BCol } from "bootstrap-vue-next";
+import {
+  BButton,
+  BCard,
+  BCol,
+  BContainer,
+  BFormInput,
+  BFormTextarea,
+  BImg,
+  BListGroup,
+  BModal,
+  BNavbar,
+  BNavbarBrand,
+  BNavbarNav,
+  BNavText,
+  BRow,
+  useModal,
+} from "bootstrap-vue-next";
 
 const drawList = ref("");
 const prizes = ref([{ name: "", quantity: 1 }]);
