@@ -2,6 +2,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/scripts"],
 
+  // Bundle both Unhead versions so the production server preserves each import.
+  nitro: {
+    externals: {
+      inline: ["unhead"],
+    },
+  },
+
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
     "bootstrap-vue-next/dist/bootstrap-vue-next.css",
