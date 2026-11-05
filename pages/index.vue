@@ -299,7 +299,7 @@ const confettiPieces = Array.from({ length: 48 }, (_, id) => ({
   id,
   style: {
     left: ((id * 37) % 100) + '%',
-    backgroundColor: ['#f6bd60', '#f8eddd', '#ed704c', '#91b9a4'][id % 4],
+    backgroundColor: ['#f6bd60', '#f8eddd', '#eb714a', '#91b9a4'][id % 4],
     animationDelay: ((id % 8) * 0.06) + 's',
     animationDuration: (1.2 + (id % 5) * 0.12) + 's',
     '--drift': (((id * 19) % 160) - 80) + 'px',
@@ -309,7 +309,9 @@ const confettiPieces = Array.from({ length: 48 }, (_, id) => ({
 </script>
 
 <style scoped>
-/* 所有文字與背景的對比至少 4.5:1（WCAG AA）；調整顏色時請維持。h1 強調色與公司其他網站的 --accent-text 相同。 */
+/* 所有文字與背景的對比至少 4.5:1（WCAG AA）；調整顏色時請維持。
+   橘色只用公司品牌橘 #eb714a：它在白底只有 3.0:1、在本頁米白底只有 2.8:1，
+   所以不當文字顏色，而是做成色塊配深色字 #302e2a（4.5:1），或用於圓點、焦點框等裝飾。 */
 .draw-page { min-height: 100vh; color: #302e2a; background: #f7f5f0; }
 .page-width { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
 .site-header { min-height: 104px; display: flex; align-items: center; gap: 30px; border-bottom: 1px solid #e4e0d7; }
@@ -317,11 +319,11 @@ const confettiPieces = Array.from({ length: 48 }, (_, id) => ({
 .brand-logo { width: 116px; height: 64px; object-fit: contain; }
 .header-caption { font-size: 13px; color: #746e64; border-left: 1px solid #ded9cf; padding-left: 24px; }
 .header-label { margin-left: auto; font-size: 11px; font-weight: 700; letter-spacing: 2px; display: flex; align-items: center; gap: 9px; }
-.status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #bf774f; flex-shrink: 0; }
+.status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #eb714a; flex-shrink: 0; }
 .intro { display: flex; justify-content: space-between; align-items: center; padding: 56px 0 36px; gap: 20px; }
-.eyebrow { color: #9d6045; font-size: 10px; letter-spacing: 2.4px; font-weight: 700; margin-bottom: 16px; }
+.eyebrow { display: inline-block; padding: 4px 12px; border-radius: 100px; background: #eb714a; color: #302e2a; font-size: 10px; letter-spacing: 2.4px; font-weight: 700; margin-bottom: 16px; }
 h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.35; margin: 0 0 14px; }
-h1 span { color: #b04d2c; }
+h1 span { padding: 0 .15em; border-radius: .2em; background: #eb714a; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .intro-description, .section-description { color: #756e64; font-size: 14px; line-height: 1.7; margin: 0; }
 .intro-note { display: flex; align-items: center; gap: 15px; color: #7b6d5a; font-size: 12px; line-height: 1.8; transform: rotate(-4deg); padding-right: 15px; }
 .intro-note i { color: #bd8a4c; font-size: 34px; }
@@ -337,12 +339,12 @@ h2 { font-size: 18px; font-weight: 700; margin: 0; letter-spacing: .5px; }
 .name-input-row { display: flex; gap: 8px; }
 .form-control { min-width: 0; height: 44px; background: #fffefa; border: 1px solid #dfdbd1; border-radius: 8px; color: #302e2a; font-size: 13px; padding: 10px 12px; }
 .form-control::placeholder { color: #7a7368; }
-.form-control:focus { border-color: #bb7650; box-shadow: 0 0 0 3px #bf774f1c; background: #fff; }
+.form-control:focus { border-color: #eb714a; box-shadow: 0 0 0 3px #eb714a1c; background: #fff; }
 .form-control:disabled { background: #f2efe9; color: #756e64; }
-.form-control[aria-invalid="true"] { border-color: #bf4b38; }
+.form-control[aria-invalid="true"] { border-color: #b3261e; }
 .add-name-button { flex-shrink: 0; background: #353d32; border: 1px solid #353d32; border-radius: 8px; font-size: 12px; font-weight: 600; padding-inline: 16px; }
 .add-name-button:hover, .add-name-button:focus-visible { background: #4b5746; border-color: #4b5746; }
-.input-feedback { min-height: 18px; margin: 6px 0 8px; color: #b34e35; font-size: 11px; }
+.input-feedback { min-height: 18px; margin: 6px 0 8px; color: #b3261e; font-size: 11px; }
 .participants-empty { flex-grow: 1; text-align: center; border: 1px dashed #e5dfd3; border-radius: 10px; padding: 21px 12px; background: #faf8f3; }
 .empty-icon { display: inline-flex; align-items: center; justify-content: center; background: #eee9de; color: #9c8c73; border-radius: 50%; width: 42px; height: 42px; font-size: 21px; margin-bottom: 10px; }
 .participants-empty p { font-size: 12px; color: #7a6f5d; margin-bottom: 4px; }
@@ -359,7 +361,7 @@ h2 { font-size: 18px; font-weight: 700; margin: 0; letter-spacing: .5px; }
 .prize-name-field { flex: 1; min-width: 0; }
 .prize-quantity-field { width: 70px; flex-shrink: 0; }
 .remove-prize-button { border: 1px solid #e6ded1; border-radius: 8px; background: transparent; color: #9b8b78; height: 44px; width: 36px; flex-shrink: 0; }
-.remove-prize-button:hover:enabled { background: #fbebe6; color: #b74c32; border-color: #e8c6ba; }
+.remove-prize-button:hover:enabled { background: #fdecea; color: #b3261e; border-color: #f1c4c0; }
 button:disabled { cursor: not-allowed; opacity: .45; }
 .add-prize-button { background: transparent; border: 1px dashed #d8d0c1; color: #83725a; width: 100%; border-radius: 8px; font-size: 12px; min-height: 41px; margin: 18px 0 auto; }
 .add-prize-button:hover, .add-prize-button:focus-visible { background: #f3efe6; color: #64543e; border-color: #ac9b80; }
@@ -403,7 +405,7 @@ button:disabled { cursor: not-allowed; opacity: .45; }
 .winner-enter-from { opacity: 0; transform: translateY(12px); }
 .site-footer { display: flex; justify-content: space-between; gap: 15px; padding: 35px 0 28px; margin-top: 18px; color: #766e63; font-size: 9px; letter-spacing: 1px; }
 button, a, input { -webkit-tap-highlight-color: transparent; }
-button:focus-visible, a:focus-visible { outline: 3px solid #c48a57; outline-offset: 4px; }
+button:focus-visible, a:focus-visible { outline: 3px solid #eb714a; outline-offset: 4px; }
 @keyframes rolling-glow { from { opacity: .65; } to { opacity: 1; } }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes confetti-fall { 0% { opacity: 1; transform: translate(0, -20px) rotate(0); } 80% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--drift), 500px) rotate(var(--turn)); } }
